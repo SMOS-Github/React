@@ -1,13 +1,16 @@
-import logo from './logo.svg';
+//import logo from './logo.svg';
 import './App.css';
-import xr from './module2.mjs';
-
+//import xr from './module2.mjs';
+import Navbar from './components/Navbar';
+import According from './components/According';
 function App() {
   return (
       <>
-        <div className="Alex">Hello World</div>
+          <Navbar />
+          <According text="Alex"/>
       </>
   );
+
 }
 
 export default App;
