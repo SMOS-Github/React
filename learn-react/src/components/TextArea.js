@@ -3,13 +3,15 @@ import React, { useState } from 'react';
 
 export default function TextArea(props) {
 
-    const [def, set] = useState("Enter Text's to change Uppercase");
+    const [def, set] = useState('');
 
     const words = def.trim().split(/\s+/).length;
     const characters = def.length;
     const readTime = words / 150;
     const freshing = Math.ceil(readTime);
-    
+
+    let darkMode = false;
+
     function OnClickChange(e) {
         set(e.target.value);
     }
@@ -18,7 +20,15 @@ export default function TextArea(props) {
         set(def.toUpperCase());
     }
     function DarkMode() {
-       
+        darkMode =! darkMode;
+        if (!darkMode) {
+            document.body.style.backgroundColor = "white";
+            document.body.style.color = "black";
+        }
+        else {
+            document.body.style.backgroundColor = "black";
+            document.body.style.color = "white";
+        }
     }
     return (
         <>
