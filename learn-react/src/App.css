@@ -1,3 +1,17 @@
 .container{
     margin-top:30px;
 }
+
+.bgh{
+    background-color:black;
+    color:white;
+}
+
+/* Add this to your CSS file */
+textarea::placeholder {
+    color: gray; /* Change this to your desired color */
+}
+
+textarea.bgh::placeholder {
+    color: lightgray; /* Change this to your desired color for dark mode */
+}
