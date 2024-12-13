@@ -15,3 +15,8 @@ textarea::placeholder {
 textarea.bgh::placeholder {
     color: lightgray; /* Change this to your desired color for dark mode */
 }
+.form-switch{
+    position:fixed;
+    top:15px;
+    right:320px;
+}
