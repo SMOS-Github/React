@@ -1,13 +1,13 @@
-import React from 'react';
+﻿import React from 'react';
 import PropTypes from 'prop-types';
-import Darkmode from './Darkmode';
+
+
 export default function Navbar(props) {
-    
+
     return (
         <>
-            <Darkmode/>
-            <nav className="navbar navbar-expand-lg bg-body-tertiary">
-                
+
+            <nav className={`navbar navbar-expand-lg navbar-${props.dark} bg-${props.light}`}>
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">{props.HomeTitle}</a>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,29 +29,36 @@ export default function Navbar(props) {
                                     <li><a className="dropdown-item" href="/">Something else here</a></li>
                                 </ul>
                             </li>
-                           
+
                         </ul>
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.mode} />
+                            <label class="form-check-label text-light mx-4 fs-6" for="flexSwitchCheckDefault">Mode</label>
+                        </div>
                         <form className="d-flex" role="search">
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
                             <button className="btn btn-outline-success" type="submit">{props.SearchTitle}</button>
                         </form>
+                       
                     </div>
                 </div>
             </nav>
         </>
     );
-}
+}   
 
 Navbar.propTypes = {
     HomeTitle: PropTypes.string.isRequired,
     AboutTitle: PropTypes.string.isRequired,
     DropdownTitle: PropTypes.string.isRequired,
-    SearchTitle:PropTypes.string.isRequired,
+    SearchTitle: PropTypes.string.isRequired,
+    mode: PropTypes.func.isRequired,
+    
 }
 
 Navbar.defaultProps = {
     HomeTitle: "Home",
     AboutTitle: "About",
     DropdownTitle: "Dropdown",
-    SearchTitle:"Search",
+    SearchTitle: "Search",
 }
