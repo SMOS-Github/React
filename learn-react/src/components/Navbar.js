@@ -1,12 +1,12 @@
 ﻿import React from 'react';
 import PropTypes from 'prop-types';
-
+import AlertPopUp from './AlertPopUp';
 
 export default function Navbar(props) {
 
     return (
         <>
-
+            
             <nav className={`navbar navbar-expand-lg navbar-${props.dark} bg-${props.light}`}>
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/">{props.HomeTitle}</a>
@@ -33,16 +33,17 @@ export default function Navbar(props) {
                         </ul>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.mode} />
-                            <label class="form-check-label text-light mx-4 fs-6" for="flexSwitchCheckDefault">Mode</label>
+                            <label class={`form-check-label text-${props.col} mx-3 fs-6`} for="flexSwitchCheckDefault">◑</label>
                         </div>
                         <form className="d-flex" role="search">
                             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                            <button className="btn btn-outline-success" type="submit">{props.SearchTitle}</button>
+                            <button className="btn btn-outline-success " type="submit">{props.SearchTitle}</button>
                         </form>
                        
                     </div>
                 </div>
             </nav>
+           
         </>
     );
 }   
@@ -53,7 +54,7 @@ Navbar.propTypes = {
     DropdownTitle: PropTypes.string.isRequired,
     SearchTitle: PropTypes.string.isRequired,
     mode: PropTypes.func.isRequired,
-    
+   
 }
 
 Navbar.defaultProps = {
@@ -61,4 +62,5 @@ Navbar.defaultProps = {
     AboutTitle: "About",
     DropdownTitle: "Dropdown",
     SearchTitle: "Search",
+ 
 }

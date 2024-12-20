@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 export default function TextArea(props) {
 
@@ -22,11 +22,13 @@ export default function TextArea(props) {
         var text = document.getElementById("exampleFormControlTextarea1");
         text.select();
         navigator.clipboard.writeText(text.value);
-    }
 
+     
+    }
+    
     return (
         <>
-           
+            
             <div className="container my-4">
                 <h1 id="heading">{props.title}</h1>
                 <textarea className={`form-control fs-4 bg-${props.dark} text-${props.light}`} id="exampleFormControlTextarea1" placeholder="Enter Text's to change Uppercase" rows="8" value={def} onChange={OnClickChange}></textarea>

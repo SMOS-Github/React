@@ -1,7 +1,8 @@
-import './App.css';
+﻿import './App.css';
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import TextArea from './components/TextArea';
+import AlertPopUp from './components/AlertPopUp';
 
 function App() {
 
@@ -11,7 +12,7 @@ function App() {
         set(!def);
         document.body.style.backgroundColor = !def ? 'black' : 'white';
         document.body.style.color = !def ? 'white' : 'black';
-        
+       <AlertPopUp myText="Alex" />
     };
 
     let dark = !def ? "light" : "dark";
@@ -20,9 +21,11 @@ function App() {
 
     return (
         <>  
-            <Navbar mode={DarkMode} dark={dark} light={light } />
-            <TextArea dark={dark} light={textLight} />
+          
+            <Navbar mode={DarkMode} dark={dark} light={light} col={DarkMode} />
             
+            <TextArea dark={dark} light={textLight} />
+           
         </>
     );
 
